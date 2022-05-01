@@ -13,10 +13,14 @@ export default {
         <img src="@/assets/trendyol-tech-logo.png" alt="Sticker Set Logo" class="company-logo" />
       </v-col>
 
-      <v-col cols="12" md="2" class="text-end">
-        <span>Next Page</span>
-
-        <v-icon>mdi-arrow-right</v-icon>
+      <v-col
+        cols="12" md="2"
+        class="text-end animate__animated animate__headShake animate__infinite"
+      >
+        <v-btn text depressed class="text-capitalize">
+          Next Page
+          <v-icon>mdi-arrow-right</v-icon>
+        </v-btn>
       </v-col>
     </v-row>
 
