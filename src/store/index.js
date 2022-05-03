@@ -129,7 +129,8 @@ export default new Vuex.Store({
     ],
   },
   getters: {
-    teams: (state) => state.teams,
+    teams: (state) => (value = '') => state.teams
+      .filter((team) => team.name.toLowerCase().includes(value.toLowerCase())),
   },
   mutations: {
   },
