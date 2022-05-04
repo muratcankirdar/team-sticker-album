@@ -24,6 +24,7 @@ export default new Vuex.Store({
           {
             name: 'Murat Can',
             worksUntil: 2022,
+            avatarDisplayed: false,
           },
           {
             name: 'Tevfik Akburç',
