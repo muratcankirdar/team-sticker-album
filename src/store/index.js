@@ -12,24 +12,24 @@ export default new Vuex.Store({
         description: 'We are frontend team and we show what you see on the screen.',
         members: [
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Murat Can',
+            worksUntil: 2022,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Tevfik Akburç',
+            worksUntil: 2021,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Ayten Öncel',
+            worksUntil: 2019,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Uğur Bilgili',
+            worksUntil: 2020,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Nur Sengül',
+            worksUntil: 2019,
           },
         ],
       },
@@ -39,28 +39,28 @@ export default new Vuex.Store({
         description: 'If data load slow, we lose customers, or maybe not.',
         members: [
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Demir Avni',
+            worksUntil: 2020,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Yağmur Bayar',
+            worksUntil: 2019,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Duygu Sarper',
+            worksUntil: 2020,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Tuncay Lemi',
+            worksUntil: 2021,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Serpil Necmi',
+            worksUntil: 2021,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Yonca Poyraz',
+            worksUntil: 2020,
           },
         ],
       },
@@ -70,28 +70,28 @@ export default new Vuex.Store({
         description: 'We will test release in 92342 android phones',
         members: [
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Sultan Boz',
+            worksUntil: 2020,
+          },
+          {
+            name: 'Belgin Gün',
+            worksUntil: 2020,
+          },
+          {
+            name: 'Elvan Adıvar',
+            worksUntil: 2017,
+          },
+          {
+            name: 'Soner Demirtaş',
+            worksUntil: 2019,
+          },
+          {
+            name: 'Melek Kobal',
+            worksUntil: 2020,
           },
           {
             name: '',
-            worksUntil: 0,
-          },
-          {
-            name: '',
-            worksUntil: 0,
-          },
-          {
-            name: '',
-            worksUntil: 0,
-          },
-          {
-            name: '',
-            worksUntil: 0,
-          },
-          {
-            name: '',
-            worksUntil: 0,
+            worksUntil: 2021,
           },
         ],
       },
@@ -101,28 +101,28 @@ export default new Vuex.Store({
         description: 'Some joke about devops',
         members: [
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Niyazi Küçük',
+            worksUntil: 2018,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'İskender Babacan',
+            worksUntil: 2019,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Eser Ali',
+            worksUntil: 2019,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Feyyaz Yiğit',
+            worksUntil: 2020,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Lale Bucak',
+            worksUntil: 2020,
           },
           {
-            name: '',
-            worksUntil: 0,
+            name: 'Gülistan Oğuz',
+            worksUntil: 2021,
           },
         ],
       },
