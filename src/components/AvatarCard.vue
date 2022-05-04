@@ -30,7 +30,7 @@ export default {
 <template>
   <v-card id="avatar-card" height="260" class="text-center">
     <v-card-title class="text-center">
-      <div v-if="member.avatarDisplayed" v-html="avatar" class="mx-auto avatar-wrapper" />
+      <div v-if="member.collected" v-html="avatar" class="mx-auto avatar-wrapper" />
 
       <img
         v-else
