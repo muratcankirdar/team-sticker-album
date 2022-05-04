@@ -5,6 +5,9 @@ export default {
     openAlbum() {
       this.$router.push('album');
     },
+    openStickerDialog() {
+      this.$store.commit('setStickerDialogVisibility', true);
+    },
   },
 };
 </script>
@@ -14,7 +17,7 @@ export default {
     <v-row justify="center" align="center" class="my-16">
       <v-col cols="4" md="2" class="hidden-sm-and-down"/>
 
-      <v-col cols="12" sm="12" md="8" class="text-center">
+      <v-col cols="10" md="8" class="text-center">
         <img src="@/assets/trendyol-tech-logo.png" alt="Sticker Set Logo" class="company-logo"/>
       </v-col>
 
@@ -30,8 +33,16 @@ export default {
     </v-row>
 
     <v-row>
-      <v-col cols="12" class="text-end">
+      <v-col cols="12" class="text-end text-h5">
         Team Sticker Album
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col cols="12" class="text-end">
+        <v-btn outlined @click="openStickerDialog">
+          Get your daily stickers
+        </v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -41,8 +52,10 @@ export default {
 #home {
   border: 1px solid;
   border-radius: 0.5rem;
+  max-width: 960px;
 
   .company-logo {
+    width: 100%;
     max-width: 20rem;
   }
 }
