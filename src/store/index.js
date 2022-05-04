@@ -12,6 +12,16 @@ export default new Vuex.Store({
         description: 'We are frontend team and we show what you see on the screen.',
         members: [
           {
+            name: 'Ayten Öncel',
+            role: 'Team Lead',
+            worksUntil: 2019,
+          },
+          {
+            name: 'Nur Sengül',
+            role: 'Product Owner',
+            worksUntil: 2019,
+          },
+          {
             name: 'Murat Can',
             worksUntil: 2022,
           },
@@ -20,15 +30,19 @@ export default new Vuex.Store({
             worksUntil: 2021,
           },
           {
-            name: 'Ayten Öncel',
-            worksUntil: 2019,
-          },
-          {
             name: 'Uğur Bilgili',
             worksUntil: 2020,
           },
           {
-            name: 'Nur Sengül',
+            name: 'Asuman Koçak',
+            worksUntil: 2019,
+          },
+          {
+            name: 'Tevfik Demirci',
+            worksUntil: 2019,
+          },
+          {
+            name: 'Selim Önder',
             worksUntil: 2019,
           },
         ],
@@ -40,10 +54,12 @@ export default new Vuex.Store({
         members: [
           {
             name: 'Demir Avni',
-            worksUntil: 2020,
+            role: 'Team Lead',
+            worksUntil: 2018,
           },
           {
             name: 'Yağmur Bayar',
+            role: 'Product Owner',
             worksUntil: 2019,
           },
           {
@@ -71,11 +87,13 @@ export default new Vuex.Store({
         members: [
           {
             name: 'Sultan Boz',
-            worksUntil: 2020,
+            role: 'Team Lead',
+            worksUntil: 2017,
           },
           {
             name: 'Belgin Gün',
-            worksUntil: 2020,
+            role: 'Product Owner',
+            worksUntil: 2017,
           },
           {
             name: 'Elvan Adıvar',
@@ -90,7 +108,7 @@ export default new Vuex.Store({
             worksUntil: 2020,
           },
           {
-            name: '',
+            name: 'Ahu Soylu',
             worksUntil: 2021,
           },
         ],
