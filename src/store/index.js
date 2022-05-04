@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    teams: [
+    isStickerDialogVisible: false,
+    teams: [ // mock data
       {
         name: 'Frontend',
         slogan: 'Make the web great again!',
@@ -153,6 +154,9 @@ export default new Vuex.Store({
     activeTeam: (state) => (name = '') => state.teams.find((team) => team.name === name),
   },
   mutations: {
+    setStickerDialogVisibility(state, value = false) {
+      state.isStickerDialogVisible = value;
+    },
   },
   actions: {
   },
