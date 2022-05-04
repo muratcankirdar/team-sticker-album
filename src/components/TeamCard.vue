@@ -1,6 +1,6 @@
 <script>
 import source from '@/mixins/source';
-import TeamLogo from '@/components/TeamLogo';
+import TeamLogo from '@/components/TeamLogo.vue';
 
 export default {
   name: 'TeamCard',
