@@ -1,25 +1,29 @@
 <script>
+import source from '@/mixins/source';
+import TeamLogo from '@/components/TeamLogo';
+
 export default {
   name: 'TeamCard',
+  components: { TeamLogo },
+  mixins: [source],
   props: {
     team: {
       type: Object,
       default: () => ({}),
     },
   },
-  computed: {
-    image() {
-      // eslint-disable-next-line global-require,import/no-dynamic-require
-      return require(`../assets/${this.team.name.toLowerCase()}.png`);
-    },
-  },
 };
 </script>
 
 <template>
-  <v-card id="team-card" class="my-12 overflow-hidden mx-auto" width="374" height="260">
+  <v-card
+    id="team-card"
+    class="my-4 overflow-hidden mx-auto"
+    width="374" height="260"
+    @click="$emit('openAlbum', team.name)"
+  >
     <v-card-title>
-      <img :src="image" alt="Team Logo" class="mx-auto logo-image" />
+      <team-logo :src="setTeamLogo(team.name)" class="mx-auto" />
     </v-card-title>
 
     <v-card-text class="text-center">
