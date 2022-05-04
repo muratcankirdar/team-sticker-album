@@ -1,6 +1,6 @@
 <script>
 import TeamCard from '@/components/TeamCard.vue';
-import TeamAlbum from '@/components/TeamAlbum';
+import TeamAlbum from '@/components/TeamAlbum.vue';
 
 export default {
   name: 'AlbumView',
