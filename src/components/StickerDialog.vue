@@ -65,8 +65,8 @@ export default {
         </template>
 
         <template v-else>
-          <v-row class="pa-4">
-            <v-col cols="2" v-for="member in randomStickers" :key="member.name">
+          <v-row class="pa-4" justify="center">
+            <v-col v-for="member in randomStickers" :key="member.name" cols="2">
               <avatar-card
                 :key="member.name" :member="member"
                 class="animate__animated animate__flipInX"
