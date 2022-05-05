@@ -9,11 +9,19 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    showAvatar: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     avatar() {
       const options = { seed: this.member.name };
+
       return createAvatar(style, options);
+    },
+    isAvatarVisible() {
+      return this.member.collected || this.showAvatar;
     },
     worksUntilYear() {
       const currentYear = new Date().getFullYear();
@@ -30,7 +38,7 @@ export default {
 <template>
   <v-card id="avatar-card" height="260" class="text-center">
     <v-card-title class="text-center">
-      <div v-if="member.collected" v-html="avatar" class="mx-auto avatar-wrapper" />
+      <div v-if="isAvatarVisible" v-html="avatar" class="mx-auto avatar-wrapper" />
 
       <img
         v-else
