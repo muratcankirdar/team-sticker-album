@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-  <v-dialog v-model="dialog" persistent max-width="960">
+  <v-dialog v-model="dialog" max-width="960" @keydown="closeDialog" @click:outside="closeDialog">
     <v-card>
       <v-card-title>
         <span class="mx-auto">Team Sticker Album</span>
@@ -82,12 +82,6 @@ export default {
           </v-row>
         </template>
       </v-card-text>
-
-      <v-card-actions v-if="!setOpened">
-        <v-spacer />
-
-        <v-btn text color="red" class="text-capitalize" @click="closeDialog">Close</v-btn>
-      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
