@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isStickerDialogVisible: false,
+    dailyStickerSetCount: 3,
     teams: [ // mock data
       {
         name: 'Frontend',
@@ -25,7 +26,7 @@ export default new Vuex.Store({
           {
             name: 'Murat Can',
             worksUntil: 2022,
-            avatarDisplayed: false,
+            collected: false,
           },
           {
             name: 'Tevfik Akburç',
@@ -152,13 +153,58 @@ export default new Vuex.Store({
     teams: (state) => (value = '') => state.teams
       .filter((team) => team.name.toLowerCase().includes(value.toLowerCase())),
     activeTeam: (state) => (name = '') => state.teams.find((team) => team.name === name),
+    unCollectedMembers: (state) => {
+      const members = state.teams.map((team) => team.members).flat();
+
+      return members.filter((member) => !member.collected);
+    },
+    unCollectedMembersCount: (state, getters) => getters.unCollectedMembers.length,
+    randomStickers: (state, getters) => {
+      const stickers = [];
+
+      const maxStickerMember = getters.unCollectedMembersCount < 6
+        ? getters.unCollectedMembersCount
+        : 6;
+
+      for (let i = 0; i < maxStickerMember; i += 1) {
+        const randomIndex = Math.floor(Math.random() * getters.unCollectedMembersCount);
+        stickers.push(getters.unCollectedMembers[randomIndex]);
+      }
+
+      return stickers;
+    },
   },
   mutations: {
     setStickerDialogVisibility(state, value = false) {
       state.isStickerDialogVisible = value;
     },
+    decreaseDailyStickerSetCount(state) {
+      if (state.dailyStickerSetCount > 0) {
+        state.dailyStickerSetCount -= 1;
+      }
+    },
+    openSet(state, randomMembers) {
+      let teams = [...state.teams];
+
+      randomMembers.forEach((randomMember) => {
+        teams = teams.map((team) => ({
+          ...team,
+          members: team.members.map((member) => {
+            if (randomMember.name === member.name) return { ...member, collected: true };
+
+            return member;
+          }),
+        }));
+      });
+
+      state.teams = teams;
+    },
   },
   actions: {
+    openSet({ commit }, randomMembers) {
+      commit('openSet', randomMembers);
+      commit('decreaseDailyStickerSetCount');
+    },
   },
   modules: {
   },
