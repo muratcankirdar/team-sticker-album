@@ -161,14 +161,24 @@ export default new Vuex.Store({
     unCollectedMembersCount: (state, getters) => getters.unCollectedMembers.length,
     randomStickers: (state, getters) => {
       const stickers = [];
+      const generatedRandomIndexes = [];
+      let hasNumber = false;
 
       const maxStickerMember = getters.unCollectedMembersCount < 6
         ? getters.unCollectedMembersCount
         : 6;
 
       for (let i = 0; i < maxStickerMember; i += 1) {
-        const randomIndex = Math.floor(Math.random() * getters.unCollectedMembersCount);
-        stickers.push(getters.unCollectedMembers[randomIndex]);
+        do {
+          const randomIndex = Math.floor(Math.random() * getters.unCollectedMembersCount);
+          hasNumber = generatedRandomIndexes.includes(randomIndex);
+
+          if (!hasNumber) {
+            generatedRandomIndexes.push(randomIndex);
+            stickers.push(getters.unCollectedMembers[randomIndex]);
+          }
+        }
+        while (hasNumber);
       }
 
       return stickers;
