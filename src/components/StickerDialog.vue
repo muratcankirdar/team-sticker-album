@@ -15,6 +15,15 @@ export default {
     randomStickers() {
       return this.$store.getters.randomStickers;
     },
+    subtitle() {
+      let message = 'Come back tomorrow for more stickers!';
+
+      if (this.dailyStickerSetCount > 0) {
+        message = `You have ${this.dailyStickerSetCount} sticker sets to open!`;
+      }
+
+      return message;
+    },
   },
   methods: {
     closeDialog() {
@@ -40,15 +49,20 @@ export default {
 
       <v-card-subtitle v-if="!setOpened" class="text-center">
         <span class="text-h5">
-          You have {{ dailyStickerSetCount }} sticker sets to open!
+          {{ subtitle }}
         </span>
       </v-card-subtitle>
 
       <v-card-text>
         <template v-if="!setOpened">
           <v-row justify="space-around">
-            <v-col v-for="set in dailyStickerSetCount" :key="set.name" cols="3" class="text-center">
-              <div style="border: 1px solid;" class="sticker-set-container my-2">
+            <v-col
+              v-for="set in dailyStickerSetCount"
+              :key="set"
+              cols="12" sm="6" md="4"
+              class="text-center"
+            >
+              <div class="sticker-set-container my-2">
                 <img
                   src="../assets/trendyol-tech-logo.png"
                   alt="Trendyol tech logo"
@@ -66,7 +80,7 @@ export default {
 
         <template v-else>
           <v-row class="pa-4" justify="center">
-            <v-col v-for="member in randomStickers" :key="member.name" cols="2">
+            <v-col v-for="member in randomStickers" :key="member.name" cols="12" md="2">
               <avatar-card
                 :key="member.name" :member="member"
                 class="animate__animated animate__flipInX"
@@ -92,12 +106,12 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid red;
+  border: 1px solid;
   border-radius: 4px;
   height: 12rem;
 
   &__image {
-    width: 80%;
+    max-width: 60%;
   }
 }
 </style>
