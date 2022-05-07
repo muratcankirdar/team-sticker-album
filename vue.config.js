@@ -5,4 +5,5 @@ module.exports = defineConfig({
     'vuetify',
   ],
   lintOnSave: false,
+  publicPath: process.env.NODE_ENV === 'production' ? '/team-sticker-album/' : '/',
 });
