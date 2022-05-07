@@ -29,12 +29,12 @@ export default {
     closeDialog() {
       this.$store.commit('setStickerDialogVisibility');
     },
-    showSet() {
-      this.setOpened = true;
+    toggleSet() {
+      this.setOpened = !this.setOpened;
     },
     pasteToAlbum() {
       this.$store.dispatch('openSet', this.randomStickers);
-      this.closeDialog();
+      this.toggleSet();
     },
   },
 };
@@ -71,7 +71,7 @@ export default {
                 <p class="text-h5 text--primary">Sticker Set</p>
               </div>
 
-              <v-btn  :key="set.name" outlined block @click="showSet">
+              <v-btn  :key="set.name" outlined block @click="toggleSet">
                 Open
               </v-btn>
             </v-col>
