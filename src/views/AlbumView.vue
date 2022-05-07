@@ -5,11 +5,9 @@ import TeamAlbum from '@/components/TeamAlbum.vue';
 export default {
   name: 'AlbumView',
   components: { TeamAlbum, TeamCard },
-  data() {
-    return {
-      searchValue: '',
-    };
-  },
+  data: () => ({
+    searchValue: '',
+  }),
   computed: {
     teams() {
       return this.$store.getters.teams(this.searchValue);
