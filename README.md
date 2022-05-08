@@ -35,3 +35,5 @@ I created 4 teams with 6 members each. I've created random number generate metho
 After that, I implemented open sticker set feature.
 
 When I started to implement syncTeams method and use localStorage to store data, I've realized that there was a bug, because I called syncSet method in HomeView file but user can reload site in album page and HomeView can't call the syncTeams method. After that I moved sync method directly to App.vue.
+
+After 4-5 manual deploys, I Created a script for automatize deploy process.
