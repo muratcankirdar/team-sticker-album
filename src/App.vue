@@ -4,9 +4,17 @@ import StickerDialog from '@/components/StickerDialog.vue';
 export default {
   name: 'App',
   components: { StickerDialog },
+  created() {
+    this.syncTeams();
+  },
   computed: {
     isStickerDialogVisible() {
       return this.$store.state.isStickerDialogVisible;
+    },
+  },
+  methods: {
+    syncTeams() {
+      this.$store.commit('syncTeams');
     },
   },
 };

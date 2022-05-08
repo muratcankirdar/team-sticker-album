@@ -22,5 +22,11 @@ export default {
     });
 
     state.teams = teams;
+    localStorage.setItem('teams', JSON.stringify(teams));
+  },
+  syncTeams(state) {
+    if (localStorage.teams) {
+      state.teams = JSON.parse(localStorage.teams);
+    }
   },
 };
