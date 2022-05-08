@@ -30,3 +30,5 @@ I wasn't working with backend api, so I handled client side search with using st
 I turned back the homepage and created StickerDialog.vue component as I planned before. Randomly sticker set open part was probably the hardest part for me.
 I created 4 teams with 6 members each. I've created random number generate method to get random index in all uncollected members but sometimes generated number is getting duplicated. So I've searched in Google and modified my method.
 After that, I implemented open sticker set feature.
+
+When I started to implement syncTeams method and use localStorage to store data, I've realized that there was a bug, because I called syncSet method in HomeView file but user can reload site in album page and HomeView can't call the syncTeams method. After that I moved sync method directly to App.vue.
