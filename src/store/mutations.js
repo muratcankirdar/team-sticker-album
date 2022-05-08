@@ -29,4 +29,13 @@ export default {
       state.teams = JSON.parse(localStorage.teams);
     }
   },
+  setDailyStickerSetCount(state, unCollectedMembersCount) {
+    const count = Math.ceil(unCollectedMembersCount / 6);
+
+    if (count >= 3) {
+      state.dailyStickerSetCount = 3;
+    } else {
+      state.dailyStickerSetCount = count;
+    }
+  },
 };

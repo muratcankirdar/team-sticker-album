@@ -6,6 +6,7 @@ export default {
   components: { StickerDialog },
   created() {
     this.syncTeams();
+    this.syncDailyStickerSetCount(this.$store.getters.unCollectedMembersCount);
   },
   computed: {
     isStickerDialogVisible() {
@@ -15,6 +16,9 @@ export default {
   methods: {
     syncTeams() {
       this.$store.commit('syncTeams');
+    },
+    syncDailyStickerSetCount(unCollectedMembersCount) {
+      this.$store.commit('setDailyStickerSetCount', unCollectedMembersCount);
     },
   },
 };
