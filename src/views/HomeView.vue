@@ -1,6 +1,30 @@
 <script>
 export default {
   name: 'HomeView',
+  computed: {
+    wrapperClasses() {
+      let classes = 'mt-16 pa-4';
+
+      if (this.$vuetify.breakpoint.smAndDown) {
+        classes += ' mx-2';
+      } else {
+        classes += ' mx-auto';
+      }
+
+      return classes;
+    },
+    albumTitleClasses() {
+      let classes = 'text-h5';
+
+      if (this.$vuetify.breakpoint.smAndDown) {
+        classes += ' text-center';
+      } else {
+        classes += ' text-end';
+      }
+
+      return classes;
+    },
+  },
   methods: {
     openAlbum() {
       this.$router.push('album');
@@ -13,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <v-container id="home" class="mt-16">
+  <div id="home" :class="wrapperClasses">
     <v-row justify="center" align="center" class="my-16">
       <v-col cols="4" md="2" class="hidden-sm-and-down"/>
 
@@ -33,19 +57,19 @@ export default {
     </v-row>
 
     <v-row>
-      <v-col cols="12" class="text-end text-h5">
-        Team Sticker Album
-      </v-col>
-    </v-row>
+      <v-spacer />
 
-    <v-row>
-      <v-col cols="12" class="text-end">
+      <v-col cols="12" md="4" class="text-center">
         <v-btn outlined @click="openStickerDialog">
           Get your daily stickers
         </v-btn>
       </v-col>
+
+      <v-col cols="12" md="4" :class="albumTitleClasses">
+        Team Sticker Album
+      </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <style lang="scss">
