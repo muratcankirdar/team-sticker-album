@@ -1,5 +1,5 @@
 <script>
-import source from '@/mixins/source';
+import source from '@/mixins/main';
 import TeamLogo from '@/components/TeamLogo.vue';
 
 export default {
