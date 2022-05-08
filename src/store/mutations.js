@@ -5,6 +5,7 @@ export default {
   decreaseDailyStickerSetCount(state) {
     if (state.dailyStickerSetCount > 0) {
       state.dailyStickerSetCount -= 1;
+      localStorage.setItem('stickerSetCount', state.dailyStickerSetCount.toString());
     }
   },
   openSet(state, randomMembers) {
@@ -29,13 +30,7 @@ export default {
       state.teams = JSON.parse(localStorage.teams);
     }
   },
-  setDailyStickerSetCount(state, unCollectedMembersCount) {
-    const count = Math.ceil(unCollectedMembersCount / 6);
-
-    if (count >= 3) {
-      state.dailyStickerSetCount = 3;
-    } else {
-      state.dailyStickerSetCount = count;
-    }
+  setDailyStickerSetCount(state, value) {
+    state.dailyStickerSetCount = value;
   },
 };
