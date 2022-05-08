@@ -1,9 +1,11 @@
 <script>
 import StickerDialog from '@/components/StickerDialog.vue';
+import main from '@/mixins/main';
 
 export default {
   name: 'App',
   components: { StickerDialog },
+  mixins: [main],
   created() {
     this.syncTeams();
     this.syncDailyStickerSetCount(this.$store.getters.unCollectedMembersCount);
@@ -16,9 +18,6 @@ export default {
   methods: {
     syncTeams() {
       this.$store.commit('syncTeams');
-    },
-    syncDailyStickerSetCount(unCollectedMembersCount) {
-      this.$store.commit('setDailyStickerSetCount', unCollectedMembersCount);
     },
   },
 };
