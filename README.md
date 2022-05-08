@@ -1,5 +1,8 @@
 # Team Sticker Album
 
+## Live Demo
+[Click for demo](https://muratcankirdar.github.io/team-sticker-album/)
+
 ### Summary
 This is a POC project of team sticker album. Think you are working remotely on a company with 1200 people and 120 scrum teams.
 Almost nobody knows each other. This project's goal is to meet people with their stickers.
