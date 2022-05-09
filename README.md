@@ -40,3 +40,11 @@ After 4-5 manual deploys, I Created a script for automatize deploy process.
 
 Lastly, I've stored sticker set count with using localStorage.
 I didn't use a backend API and handled all data on client side, but we have to create and API and use endpoints in every step of course. 
+
+## Notes
+I used localStorage, so you have to clean browser cache after open 3 sticker sets if you want to test again, or you can wait one day. :)
+
+### Local Development
+- Clone project
+- yarn install
+- yarn serve
