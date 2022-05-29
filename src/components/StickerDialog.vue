@@ -64,8 +64,8 @@ export default {
             >
               <div class="sticker-set-container my-2">
                 <img
-                  src="../assets/trendyol-tech-logo.png"
-                  alt="Trendyol tech logo"
+                  src="../assets/logo.png"
+                  alt="Logo"
                   class="sticker-set-container__image"
                 >
                 <p class="text-h5 text--primary">Sticker Set</p>

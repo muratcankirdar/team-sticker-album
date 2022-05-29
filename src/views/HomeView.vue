@@ -42,7 +42,7 @@ export default {
       <v-col cols="4" md="2" class="hidden-sm-and-down"/>
 
       <v-col cols="10" md="8" class="text-center">
-        <img src="@/assets/trendyol-tech-logo.png" alt="Sticker Set Logo" class="company-logo"/>
+        <img src="@/assets/logo.png" alt="Sticker Set Logo" class="company-logo"/>
       </v-col>
 
       <v-col
